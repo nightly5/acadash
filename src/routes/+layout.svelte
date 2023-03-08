@@ -1,69 +1,33 @@
-<script lang="ts">
-    import DarkMode from "svelte-dark-mode";
-    import {Nav, NavLink, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem} from "sveltestrap";
-
-    let isOpen = false;
-
-    let theme: "dark" | "light";
-    $: dark = theme === "dark";
-    $: switchTheme = theme === "dark" ? "light" : "dark";
-
-    $: if (typeof window !== "undefined") {
-        document.body.className = theme;
-        const footerColors = document.querySelector("footer")?.classList;
-        const darkColors = ["bg-dark", "text-white"];
-        const lightColors = ["bg-white", "text-black"];
-        if (dark) {
-            footerColors?.remove(...lightColors);
-            footerColors?.add(...darkColors);
-        } else {
-            footerColors?.remove(...darkColors);
-            footerColors?.add(...lightColors);
-        }
-    };
-</script>
-
-<DarkMode bind:theme />
-
-<div class="app">
+<div class="app font-sans">
     <header>
-        <Navbar color={theme} {dark} expand="md">
-            <NavbarBrand href="/">Acadash</NavbarBrand>
-            <NavbarToggler title="Menu" on:click={() => {isOpen = !isOpen}} />
-            <Collapse {isOpen} navbar expand="md">
-                <Nav class="ms-auto" navbar>
-                    <NavItem>
-                        <NavLink href="/test">Test 1</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/test2">Test 2</NavLink>
-                    </NavItem>
-                </Nav>
-            </Collapse>
-        </Navbar>
+        <nav class="navbar bg-neutral">
+            <div class="navbar-start">
+                <button class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </button>
+            </div>
+            <div class="flex-1">
+              <a class="btn btn-ghost normal-case text-xl" href="/">Acadash</a>
+            </div>
+            <div class="flex-none">
+              <ul class="menu menu-horizontal px-1">
+                <li><a href="/test1">Test 1</a></li>
+                <li><a href="/test2">Test 2</a></li>
+              </ul>
+            </div>
+          </nav>
     </header>
 
     <main>
         <slot />
     </main>
 
-    <footer class="footer bg-dark text-white">
-        Theme: {theme} | App by nightly5
-    </footer>
+    <footer>App by nightly5</footer>
 </div>
 
-<style>
-    :global(.dark) {
-        color: white;
-        background: #121212;
-    }
-    .footer {
-        position: absolute;
-        bottom: 0;
-        left: 25%;
-        right: 25%;
-        padding: 8px 8px;
-        color: white;
-        text-align: center;
-    }
+<style lang="postcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
 </style>
