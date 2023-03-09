@@ -1,9 +1,10 @@
 import daisyui from "daisyui";
 
+/** @type {import('tailwindcss').Config} */
 export default {
-    content: ["./src/**/*.{html,js,svelte}"],
-    theme: {
-      extend: {},
+    daisyui: {
+        themes: ["cmyk", "business"]
     },
+    content: ["./src/**/*.{html,js,svelte}"],
     plugins: [daisyui]
 };

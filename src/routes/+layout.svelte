@@ -1,6 +1,6 @@
 <div class="app font-sans">
     <header>
-        <nav class="navbar bg-neutral">
+        <nav class="navbar bg-base-300">
             <div class="navbar-start flex-1">
                 <a class="btn btn-ghost normal-case text-xl" href="/">
                     Acadash
@@ -13,7 +13,7 @@
                 </ul>
             </div>
             <div class="dropdown">
-                <button class="btn btn-ghost lg:hidden" type="button">
+                <button title="Menu" class="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round"
@@ -22,7 +22,7 @@
                         />
                     </svg>
                 </button>
-                <ul class="menu dropdown-content shadow bg-base-300 rounded-box right-0 p-2 flex-auto min-w-max">
+                <ul class="menu dropdown-content shadow bg-base-100 rounded-box right-0 p-3 flex-auto min-w-max">
                     <li><a href="/test1">Test 1</a></li>
                     <li><a href="/test2">Test 2</a></li>
                 </ul>
@@ -36,6 +36,11 @@
 
 </div>
 
+<!--
+    Unused selectors can be safely ignored as tailwind discards them during
+    preprocessing postcss
+-->
+<!-- svelte-ignore css-unused-selector -->
 <style lang="postcss">
     @tailwind base;
     @tailwind components;
