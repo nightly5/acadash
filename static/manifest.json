@@ -1,0 +1,39 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "Acadash",
+    "description": "A lightning-fast academic dashboard",
+    "id": "/dashboard",
+    "start_url": "/dashboard",
+    "background_color": "#121212",
+    "theme_color": "#191D24",
+    "display": "standalone",
+    "scope": "/",
+    "shortcuts": [
+        {
+            "name": "Attendance",
+            "description": "View your attendance",
+            "url": "/dashboard?page=attendance",
+            "icons": [{ "src": "/images/attendance.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Timetable",
+            "description": "View your timetable",
+            "url": "/dashboard?page=timetable",
+            "icons": [{ "src": "/images/timetable.png", "sizes": "192x192" }]
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/images/screenshot1.png",
+            "type": "image/png",
+            "sizes": "540x720",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "/images/screenshot2.jpg",
+            "type": "image/jpg",
+            "sizes": "720x540",
+            "form_factor": "wide"
+        }
+    ]
+}
